@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "113983094647",
+    "project_id": "packagetest-74548",
+    "storage_bucket": "packagetest-74548.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113983094647:android:c0f3c614a5477fc671eb72",
+        "android_client_info": {
+          "package_name": "com.example.package_f_version3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113983094647-ogn4h05lgbm8mbrjflqev34rtalcmt28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5QVbp5Cnha3_dko0wijd_2N3S4S5wtXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113983094647-ogn4h05lgbm8mbrjflqev34rtalcmt28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113983094647:android:13286b9af8ae329871eb72",
+        "android_client_info": {
+          "package_name": "np.com.nepalipatro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113983094647-aut8qmu64ptakh5levuq7f1prrlmd9uu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "np.com.nepalipatro",
+            "certificate_hash": "76c656badd4fe796a2259fe5c4319f4e336d9d7c"
+          }
+        },
+        {
+          "client_id": "113983094647-ogn4h05lgbm8mbrjflqev34rtalcmt28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5QVbp5Cnha3_dko0wijd_2N3S4S5wtXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113983094647-ogn4h05lgbm8mbrjflqev34rtalcmt28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
