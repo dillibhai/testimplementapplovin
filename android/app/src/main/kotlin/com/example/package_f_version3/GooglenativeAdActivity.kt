@@ -32,16 +32,15 @@ class NativeAdWrapper(private val layoutInflater: LayoutInflater, private val co
         val adView = layoutInflater.inflate(layoutRes, null) as NativeAdView
         val headlineView = adView.findViewById<TextView>(R.id.google_flutter_native_ad_headline)
         val bodyView = adView.findViewById<TextView>(R.id.google_flutter_native_ad_body)
-        val  adAttributionView = adView.findViewById<TextView>(R.id.google_flutter_native_ad_attribution)
+        val adAttributionView = adView.findViewById<TextView>(R.id.google_flutter_native_ad_attribution)
         val advertiserView = adView.findViewById<TextView>(R.id.google_flutter_native_ad_advertiser)
-        val   mediaView:MediaView? = adView.findViewById(R.id.google_flutter_native_ad_media)
-        val   button = adView.findViewById<Button>(R.id.google_flutter_native_ad_call_to_action)
+        val  mediaView:MediaView? = adView.findViewById(R.id.google_flutter_native_ad_media)
+        val  button = adView.findViewById<Button>(R.id.google_flutter_native_ad_call_to_action)
         val  imageView:ImageView? = adView.findViewById(R.id.google_flutter_native_ad_icon)
         if (nativeAd == null) {
             return adView
         }
         headlineView.text = nativeAd.headline
-
         bodyView.text = nativeAd.body
         adAttributionView.text = "Ad"
         advertiserView.text = nativeAd.advertiser

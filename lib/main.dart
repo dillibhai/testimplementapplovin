@@ -1,5 +1,6 @@
 import 'package:ad_package/ads/interstital_ad_wrapper.dart';
 import 'package:ad_package/ads/rewarded_ad_wrapper.dart';
+import 'package:ad_package/widget/banner_ad_widget.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
@@ -15,8 +16,9 @@ void main() async {
   // print(app);
   FacebookAudienceNetwork.init(
       iOSAdvertiserTrackingEnabled: false,
-      // testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6");
-      testingId: "3114f388-d9b0-4c03-9b16-7edf841f67f5");
+      testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6");
+  // testingId: "3114f388-d9b0-4c03-9b16-7edf841f67f5");
+
   // final remoteConfig = FirebaseRemoteConfig.instance;
   // remoteConfig.setConfigSettings(
   //   RemoteConfigSettings(
@@ -43,26 +45,30 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FutureBuilder<FirebaseRemoteConfig>(
-        future: setupRemoteConfig(),
-        builder: (BuildContext context,
-            AsyncSnapshot<FirebaseRemoteConfig> snapshot) {
-          return snapshot.hasData
-              ? MyHomePage(
-                  remoteConfig: snapshot.requireData,
-                )
-              : Scaffold(
-                  appBar: AppBar(
-                    title: const Text("Data Not found"),
-                  ),
-                  body: const Center(child: Text("data not avialable...")));
-        },
-      ),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage()
+        // home: FutureBuilder<FirebaseRemoteConfig>(
+        //   future: setupRemoteConfig(),
+        //   builder: (BuildContext context,
+        //       AsyncSnapshot<FirebaseRemoteConfig> snapshot) {
+        //     return snapshot.hasData
+        //         ? MyHomePage(
+        //             remoteConfig: snapshot.requireData,
+        //           )
+        //         : Scaffold(
+        //             appBar: AppBar(
+        //               title: const Text("Data Not found"),
+        //             ),
+        //             body: const Center(
+        //               child: Text("data not avialable..."),
+        //             ),
+        //           );
+        //   },
+        // ),
+        );
   }
 }
 
@@ -77,8 +83,7 @@ Future<FirebaseRemoteConfig> setupRemoteConfig() async {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.remoteConfig}) : super(key: key);
-  final FirebaseRemoteConfig remoteConfig;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -107,27 +112,42 @@ class _MyHomePageState extends State<MyHomePage> implements RewardedAdListener {
               ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => AdsView(
-                          adportal: widget.remoteConfig.getInt("adPortal"),
-                        ),
-                      ),
+                      MaterialPageRoute(builder: (context) => const AdsView()
+                          // builder: (context) => AdsView(
+                          //   // adportal: widget.remoteConfig.getInt("adPortal"),
+                          // ),
+                          ),
                     );
-                    print(widget.remoteConfig.getInt("adPortal"));
                   },
                   child: const Text("Ad test Btn")),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     InterstitialAdWrapper("", adsPortal: 3);
-              //   },
-              //   child: const Text("interstitalAd"),
-              // ),
-              // ElevatedButton(
-              //     onPressed: () {
-              //       // RewardedAdWrapper(this);
-              //       RewardedAdWrapper(this, adsPortal: 3);
-              //     },
-              //     child: const Text("Rewarded"))
+              ElevatedButton(
+                onPressed: () {
+                  InterstitialAdWrapper(
+                      "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
+                      adsPortal: 1);
+                },
+                child: const Text("interstitalAd"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // RewardedAdWrapper(this);
+                  RewardedAdWrapper(
+                    this,
+                    adsPortal: 1,
+                  );
+                },
+                child: const Text("Rewarded"),
+              ),
+              ElevatedButton(
+                onPressed: (() {
+                  BannerAdWidget(
+                    "",
+                    "",
+                    adsPortal: 1,
+                  );
+                }),
+                child: const Text("Banner"),
+              )
 
               // ElevatedButton(
               //     onPressed: () {

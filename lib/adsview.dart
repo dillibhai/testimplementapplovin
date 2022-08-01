@@ -5,8 +5,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 
 class AdsView extends StatefulWidget {
-  const AdsView({Key? key, required this.adportal}) : super(key: key);
-  final int? adportal;
+  const AdsView({Key? key}) : super(key: key);
+  // final int? adportal;
   @override
   State<AdsView> createState() => _AdsViewState();
 }
@@ -20,16 +20,16 @@ class _AdsViewState extends State<AdsView> {
       ),
       body: ListView(
         children: [
-          // NativeAdWidget(
-          //     "",
-          //     "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
-          //     // "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
-          //     // "radio_layout_native_news",
-          //     "",
-          //     // adsPortal: widget.adportal!.toInt(),
-          //     adsPortal: 1,
-          //     priority: AdsPriority.Other,
-          //     325),
+          NativeAdWidget(
+              "",
+              // "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
+              "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
+              // "radio_layout_native_news",
+              "news_native_ad",
+              // adsPortal: widget.adportal!.toInt(),
+              adsPortal: 1,
+              priority: AdsPriority.Other,
+              325),
 
           // NativeAdWidget(
           //     "",
@@ -38,13 +38,24 @@ class _AdsViewState extends State<AdsView> {
           //     adsPortal: 3,
           //     325),
 
-          NativeAdWidget(
-              "",
-              "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
-              // "google_native_ad",
-              "google_native_ad",
-              adsPortal: 3,
-              325),
+          // NativeAdWidget(
+          //     "",
+          //     // "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
+          //     "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
+          //     // "ca-app-pub-3940256099942544/2247696110",
+          //     // "b8baf4d7051afc7f",
+          //     // "google_native_ad",
+          //     "native_ad_applovin",
+          //     // "test_app_lovin",
+          //     adsPortal: 3,
+          //     priority: AdsPriority.Other,
+          //     325),
+
+          // BannerAdWidget(
+          //   "",
+          //   "435ee2924f1eda51",
+          //   adsPortal: 3,
+          // )
           // NativeAdWidget(
           //     "",
           //     "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
@@ -60,6 +71,8 @@ class _AdsViewState extends State<AdsView> {
           // NativeAdWidget(
           //     "",
           //     "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
+          //     // "IMG_16_9_APP_INSTALL#2312433698835503_2964952163583650",
+          //     // "",
           //     "google_native_ad",
           //     adsPortal: 2,
           //     125),
